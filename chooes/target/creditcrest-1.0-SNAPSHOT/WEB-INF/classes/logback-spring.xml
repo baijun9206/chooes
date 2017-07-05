@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- Logback configuration. See http://logback.qos.ch/manual/index.html -->  
+<configuration>
+  <!-- 按文件大小区分的滚动日志 INFO -->  
+  <appender name="infoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">  
+    <!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->  
+    <encoder>  
+        <pattern>  
+            [%-5level] [%date{yyyy-MM-dd HH:mm:ss}][%thread] %logger{96} [%line] - %msg%n  
+        </pattern>  
+        <charset>UTF-8</charset> <!-- 此处设置字符集 -->  
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+      <!-- rollover daily 配置日志所生成的目录以及生成文件名的规则 -->  
+      <fileNamePattern>${ccs.root}logs/chooes-%d{yyyy-MM-dd}.%i.log</fileNamePattern>  
+      <timeBasedFileNamingAndTriggeringPolicy  
+          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
+        <!-- or whenever the file size reaches 64 MB -->  	
+        <maxFileSize>64MB</maxFileSize>  
+      </timeBasedFileNamingAndTriggeringPolicy>
+       <!-- 日志最多保留天数 -->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">  
+      <level>INFO</level>
+      <onMatch>ACCEPT</onMatch>
+      <onMismatch>DENY</onMismatch>  
+    </filter>
+    <append>true</append> 
+    <!-- Safely log to the same file from multiple JVMs. Degrades performance! -->  
+    <prudent>true</prudent>
+  </appender>
+  
+  <!-- 按日期区分的滚动日志配置 ERROR -->
+  <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  	<file>${ccs.root}logs/chooes-error.log</file>  
+    <!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->  
+    <encoder>  
+        <pattern>
+            [%-5level] [%date{yyyy-MM-dd HH:mm:ss}][%thread] %logger{96} [%line] - %msg%n  
+        </pattern>  
+        <charset>UTF-8</charset> <!-- 此处设置字符集 -->  
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+     <!--rollover daily 配置日志所生成的目录以及生成文件名的规  -->   
+      <fileNamePattern>${ccs.root}logs/chooes-errors-%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+      	<!--日志最多保留天数 -->
+      <maxHistory>30</maxHistory>
+    </rollingPolicy>
+  
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">  
+       <level>ERROR</level>  
+       <onMatch>ACCEPT</onMatch>  
+       <onMismatch>DENY</onMismatch> 
+    </filter>
+  </appender>    
+  
+  <!-- Console output -->
+ 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">  
+	    <!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->  
+	      <encoder>  
+	          <pattern>  
+	              [%-5level] [%date{yyyy-MM-dd HH:mm:ss}] [%thread] %logger{96} [%line] - %msg%n  
+	          </pattern>
+	          <charset>UTF-8</charset> <!-- 此处设置字符集 -->  
+	      </encoder>  
+	    <!-- Only log level WARN and above -->  
+	    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">  
+	      <level>${log.level}</level> 
+	    </filter>  
+	  </appender>  
+  <!-- File output -->
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${ccs.root}logs/std.out</file>
+    <append>true</append>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <pattern>[%-5level] [%date{yyyy-MM-dd HH:mm:ss}] [%thread] %logger{96} [%line] - %msg%n</pattern>
+    </encoder>
+  </appender>
+   <root level="${log.level}">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+    <appender-ref ref="infoAppender" />
+    <appender-ref ref="errorAppender" />
+  </root>
+  
+  <!-- Enable FILE and STDOUT appenders for all log messages.  
+       By default, only log at level INFO and above. --> 
+ 
+  <!-- For loggers in the these namespaces, log at all levels. -->  
+  <!-- <logger name="pedestal" level="ALL" additivity="false" />  
+  <logger name="hammock-cafe" level="ALL" additivity="false"/>  
+  <logger name="user" level="ALL" additivity="false"/>   -->
+</configuration> 
