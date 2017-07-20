@@ -26,12 +26,20 @@ public class LoginController {
      */
     @RequestMapping("/")
     public String index(){
-        return "login";
+        return "/pages/login.jsp";
+    }
+
+    @RequestMapping("/test")
+    public String home(){
+        //ModelAndView mv = new ModelAndView("redirect:/admin/");
+        return "redirect:/admin/";
     }
     @RequestMapping("/login")
     @ResponseBody
     public AjaxResult login(HttpServletRequest request,HttpServletResponse response){
         return loginService.login(request,response);
     }
+
+
 
 }
