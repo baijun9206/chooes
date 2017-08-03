@@ -28,4 +28,6 @@ public class JamApplicationTests {
 		System.out.println(studyProperties.getDesc());
 	}
 
+
+
 }

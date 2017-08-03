@@ -15,7 +15,7 @@
         <!-- 设置不过滤内容，比如:css,jquery,img 等资源文件 -->
         <mvc:resources location="/error/" mapping="/error/**" />
         <mvc:resources location="/assets/" mapping="/assets/**" />
-
+        <mvc:resources location="/*.html" mapping="/**.html" />
         <!-- 相当于注册了DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter两个bean，配置一些messageconverter。即解决了@Controller注解的使用前提配置。 -->
         <!-- 启用默认配置 -->
         <!--json配置-->
