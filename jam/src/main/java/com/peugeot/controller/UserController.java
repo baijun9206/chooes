@@ -1,11 +1,7 @@
 package com.peugeot.controller;
 
 import com.peugeot.VO.User;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
@@ -13,7 +9,7 @@ import java.util.*;
  * 用户大前端
  * Created by 柏世民 on 2017/8/2.
  */
-@Controller
+@RestController
 @RequestMapping(value = "/users")
 public class UserController {
 
