@@ -1,4 +1,4 @@
-package com.peugeot.VO;
+package com.peugeot.model;
 
 import lombok.Data;
 

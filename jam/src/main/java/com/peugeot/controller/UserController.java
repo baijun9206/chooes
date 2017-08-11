@@ -1,6 +1,6 @@
 package com.peugeot.controller;
 
-import com.peugeot.VO.User;
+import com.peugeot.model.User;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -10,7 +10,7 @@ import java.util.*;
  * Created by 柏世民 on 2017/8/2.
  */
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/user")
 public class UserController {
 
     // 创建线程安全的Map

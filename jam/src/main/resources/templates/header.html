@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- following menu-->
+<div class="ui fixed inverted menu" th:fragment="fmenu">
+    <div class="ui container">
+        <a href="/" class="header item">
+            <img class="logo" src="/images/atm.png">
+        </a>
+        <a href="/" class="item">首页</a>
+        <a href="/see" class="item">瞄一瞄</a>
+        <a href="/search" class="item">搜索</a>
+        <a href="/parse" class="item">解析</a>
+        <a href="/tip" class="item">赞赏</a>
+        <a href="/author" class="item">作者</a>
+        <a href="https://github.com/ChinaSilence/any-video" class="item" target="_blank">Github</a>
+
+    </div>
+</div>
+
+<!-- Sidebar Menu -->
+<div class="ui vertical inverted sidebar menu" th:fragment="smenu">
+    <a href="/" class="item">首页</a>
+    <a href="/see" class="item">瞄一瞄</a>
+    <a href="/search" class="item">搜索</a>
+    <a href="/parse" class="item">解析</a>
+    <a href="/tip" class="item">打赏</a>
+    <a href="/author" class="item">作者</a>
+    <a href="https://github.com/ChinaSilence/any-video" class="item" target="_blank">Github</a>
+
+</div>
+
+<!-- pointing menu -->
+<div class="ui large secondary pointing menu" th:fragment="pmenu">
+    <a class="toc item">
+        <i class="sidebar icon"></i>
+    </a>
+    <a href="/" class="item">首页</a>
+    <a href="/see" class="item">瞄一瞄</a>
+    <a href="/search" class="item">搜索</a>
+    <a href="/parse" class="item">解析</a>
+    <a href="/tip" class="item">打赏</a>
+    <a href="/author" class="item">作者</a>
+    <a href="https://github.com/ChinaSilence/any-video" class="item" target="_blank">Github</a>
+</div>
+</body>
+</html>

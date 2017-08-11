@@ -1,5 +1,6 @@
 package com.peugeot.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,14 +16,16 @@ public class LoginController {
         return "login";
     }
 
+    @PreAuthorize("hasRole('Role_ADMIN')")
     @RequestMapping("/index")
     public String index(){
-        return "common/index";
+        return "index";
     }
+
 
     @RequestMapping("/hello")
     public String hello(){
-        return "common/hello";
+        return "hello";
     }
     @RequestMapping("/")
     @ResponseBody
