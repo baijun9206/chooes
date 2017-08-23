@@ -35,9 +35,6 @@ public class JamUserDetailsService implements UserDetailsService {
         List<SimpleGrantedAuthority> simpleGrantedAuthorities = createAuthorities(user.getRoles());
         return new User(user.getUserName(), user.getPassWord(), simpleGrantedAuthorities);
     }
-
-
-
     /**
      * 权限字符串转化
      *

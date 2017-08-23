@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class UserInfoSerivceImpl implements UserInfoService {
 
     @Autowired
-    private UserInfoDao userInfoDao;
+    private UserInfoDao userDao;
 
     @Override
     public UserVO fetchUserByUserName(String userName) {
@@ -22,6 +22,6 @@ public class UserInfoSerivceImpl implements UserInfoService {
         if(StringUtils.isEmpty(userName)){
             return null;
         }
-        return userInfoDao.fetchUserByUserName(userName);
+        return userDao.fetchUserByUserName(userName);
     }
 }

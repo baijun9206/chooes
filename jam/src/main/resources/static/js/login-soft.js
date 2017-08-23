@@ -22,10 +22,10 @@ var Login = function () {
 
 	            messages: {
 	                username: {
-	                    required: "Username is required."
+	                    required: "请填写用户名,不能为空!"
 	                },
 	                password: {
-	                    required: "Password is required."
+	                    required: "请填写密码,不能为空!"
 	                }
 	            },
 
@@ -48,14 +48,14 @@ var Login = function () {
 	            },
 
 	            submitHandler: function (form) {
-	                window.location.href = "index.html";
+	                window.location.href = "/login";
 	            }
 	        });
 
 	        $('.login-form input').keypress(function (e) {
 	            if (e.which == 13) {
 	                if ($('.login-form').validate().form()) {
-	                    window.location.href = "index.html";
+	                    window.location.href = "/login";
 	                }
 	                return false;
 	            }

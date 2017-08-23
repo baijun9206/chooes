@@ -10,7 +10,7 @@ import java.util.*;
  * Created by 柏世民 on 2017/8/2.
  */
 @RestController
-@RequestMapping(value = "/user")
+@RequestMapping(value = "/users")
 public class UserController {
 
     // 创建线程安全的Map
