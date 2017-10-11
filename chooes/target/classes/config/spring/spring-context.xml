@@ -20,6 +20,7 @@
     <context:component-scan base-package="com.creditcrest.ccs" />
     <context:property-placeholder location="classpath:application.properties"/>
     <aop:aspectj-autoproxy />
+
     <!--导入mvc配置-->
     <import resource="spring-mvc.xml"/>
     <!--导入数据库连接-->

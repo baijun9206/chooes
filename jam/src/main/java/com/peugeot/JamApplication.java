@@ -12,10 +12,6 @@ public class JamApplication {
 		SpringApplication.run(JamApplication.class, args);
 	}
 
-//	@RequestMapping("/")
-//	public String login(){
-//		return "login";
-//	}
 }
 
 

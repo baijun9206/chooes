@@ -1,5 +1,6 @@
 package com.peugeot.model;
 
+import com.peugeot.annotation.Properties;
 import lombok.Data;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Data;
  */
 @Data
 public class UserVO {
+
 
     private Integer id;
 
@@ -18,5 +20,10 @@ public class UserVO {
     private String roles;
 
     private String nickName;
+
+    private String sex;
+
+    @Properties(category = "sex")
+    private String sexName;
 
 }
