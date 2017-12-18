@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="ehttp://www.thymeleaf.org" th:fragment="menu">
+
+
+<div class="page-sidebar nav-collapse collapse">
+    <!-- BEGIN SIDEBAR MENU -->
+    <ul>
+        <li>
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            <div class="sidebar-toggler hidden-phone"></div>
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+        </li>
+        <li>
+            <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+            <form class="sidebar-search">
+                <div class="input-box">
+                    <a href="javascript:;" class="remove"></a>
+                    <input type="text" placeholder="查询..." />
+                    <input type="button" class="submit" value=" " />
+                </div>
+            </form>
+            <!-- END RESPONSIVE QUICK SEARCH FORM -->
+        </li>
+        <li class="start active ">
+            <a href="index.html">
+                <i class="icon-home"></i>
+                <span class="title">首页</span>
+                <span class="selected"></span>
+            </a>
+        </li>
+        <li class="has-sub ">
+            <a href="javascript:;">
+                <i class="icon-bookmark-empty"></i>
+                <span class="title">组织管理</span>
+                <span class="arrow "></span>
+            </a>
+            <ul class="sub">
+                <li ><a href="ui_general.html">用户管理</a></li>
+            </ul>
+        </li>
+    </ul>
+    <!-- END SIDEBAR MENU -->
+</div>
+</html>

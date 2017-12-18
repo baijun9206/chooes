@@ -1,6 +1,6 @@
 package com;
 
-import com.tools.DateUtil;
+import com.jam.tools.DateUtil;
 import org.junit.Test;
 
 import java.util.ArrayList;
